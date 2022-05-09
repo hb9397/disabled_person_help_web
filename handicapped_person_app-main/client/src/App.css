@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Poor+Story&display=swap');
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+.title{
+  text-align: center;
+}
+
+
+
+.map{
+  margin-top: 50px;
+  width: 500px;
+  height: 500px;
+  display:inline-block;
+  
+}
+.facilitiesShow{
+  display: inline-block;
+  position: relative;
+  /* z-index: 1; */
+  padding: 10px; 
+  background: rgb(236, 199, 97); 
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+  overflow: scroll;
+  border-radius: 6px;
+  border: 1px solid rgb(183, 81, 187);
+  margin-left: 300px;
+}
+.data{
+  display: inline-block;
+  border: 3px solid black;
+  font-family: 'Nanum Pen Script', cursive;
+  font-family: 'Poor Story', cursive;
+}
+.mapSet{
+  position: relative;
+  margin-left: 200px;
+}
+.facilities{
+  
+margin-left: 50px;
+ display: inline-block;
+ width: 700px;
+ height: 500px;
+} 
+.facilitiesBtn{
+  
+  font-family: 'Nanum Pen Script', cursive;
+  font-family: 'Poor Story', cursive;
+  font-size: 15px;
+  border: 4px solid #88a5d1;;
+}
+
+.btn{
+  color: #1c2b4a;
+  border: 4px solid #88a5d1;;
+  /* background-color: #a9a56f; */
+  font-size: 20px;
+  font-family: 'Nanum Pen Script', cursive;
+  font-family: 'Poor Story', cursive;
+  /* display: inline-block;
+  position: static; */
+}
+
+.app{
+  text-align: center;
+  background-color: #88a5d1;
+  color: rgb(255, 255, 130);;
+  
+}
+.facilitiesBtns{
+  margin-left: 300px;
+}
+
+
+
+
+.how{
+  color: #62d38d; 
+  font-size:14px; 
+  margin-top:-45px;
+  font-family : 'Jua', sans-serif;
+  margin-top: 5px;
+ }
+
+
+
+
+
+
+.name{
+  margin-left: 50%;
+  font-family: 'Nanum Pen Script', cursive;
+  font-family: 'Poor Story', cursive;
+}
+.modalItem
+   {
+     margin-top: 30px;
+     margin-left: 30px;
+   }
+   .ReactModal__Content
+   {
+    background-color: #a99e6f;
+    font-family: 'Nanum Pen Script', cursive;
+    width: 400px;
+    height: 400px;
+
+   }
+   .ReactModal__Content button
+   {
+    background-color: #a99e6f;
+    outline: 0.1;
+    color: #3b2616;
+    font-family: 'Jua', sans-serif;
+    border: 0;
+     outline: 0;
+     margin-left: 250px;
+     width: 100px;
+     border: 1px solid #d1a788;
+     border-radius: .25em;
+   }
+
+
