@@ -29,7 +29,7 @@ const Facilities = (props) => {
         props.setLocate(data)
       }) */
     props.setIsLibrary(true)
-    fetch('http://127.0.0.1:80/phpServer/library.php')
+    fetch('http://127.0.0.1:80/disabled_person_help_web/phpServer/library.php')
       .then(res => res.json())
       .then(data => {
         props.setLocate(data)
@@ -50,11 +50,12 @@ const Facilities = (props) => {
 
 
     props.setIsChair(true)
-    fetch('http://127.0.0.1:80/phpServer/electric_wc_cs.php')
+    fetch('http://127.0.0.1:80/disabled_person_help_web/phpServer/electric_wc_cs.php')
       .then(res => res.json())
       .then(data => {
         props.setLocate(data)
       })
+
     /* props.setIsChair(true)
     fetch('http://127.0.0.1:5000/api/electricChair')
       .then(res => res.json())
@@ -82,8 +83,8 @@ const Facilities = (props) => {
       .then(data => {
         props.setLocate(data)
       }) */
-      props.setIsLive(true)
-    fetch('http://127.0.0.1:80//phpServer/swf.php')
+    props.setIsLive(true)
+    fetch('http://127.0.0.1:80/disabled_person_help_web/phpServer/swf.php')
       .then(res => res.json())
       .then(data => {
         props.setLocate(data)
@@ -103,7 +104,7 @@ const Facilities = (props) => {
     props.setIsShowLiveData(false)
 
     props.setIsTour(true)
-    fetch('http://127.0.0.1:80/phpServer/tourism.php')
+    fetch('http://127.0.0.1:80/disabled_person_help_web/phpServer/tourism.php')
       .then(res => res.json())
       .then(data => {
         props.setLocate(data)

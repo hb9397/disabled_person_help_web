@@ -38,6 +38,7 @@ function App() {
 
 
   useEffect(()=>{
+    console.log(lat, lng)
   },[lat,lng])
 
   function openModal(){

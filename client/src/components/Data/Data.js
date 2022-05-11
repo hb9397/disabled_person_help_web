@@ -49,9 +49,9 @@ const Data = (props) => {
       {props.isShowTourData ?
         <div>
           <h3>
-            시설명: {props.tourData.idtourism_name}<br /><br />
-            시설주소: {props.tourData.idtourism_addr}<br /><br />
-            시설유형: {props.tourData.idtourism_dev}<br /><br />
+            시설명: {props.tourData.시설명}<br /><br />
+            시설주소: {props.tourData.시설주소}<br /><br />
+            시설유형: {props.tourData.시설유형}<br /><br />
             장애인 전용 주차구역 여부: {props.tourData.장애인전용주차구역여부}<br /><br />
             장애인 용 승강기 여부: {props.tourData.장애인용승강기여부}<br /><br />
             장애인 화장실 여부: {props.tourData.장애인화장실여부}<br /><br />

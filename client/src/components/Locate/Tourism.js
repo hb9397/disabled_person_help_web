@@ -32,11 +32,10 @@ const Tourism = (props) => {
             result.push(<><button className='btn' key={i} onClick={()=>{
                 props.setTourData(data[i]);  
                 showData();
-                geocode(data[i].idtourism_addr)
-
+                geocode(data[i].시설주소)
             }
-            }>{data[i].idtourism_name}</button><br/><br/></>)
-        }   
+            }>{data[i].시설명}</button><br/><br/></>)
+        }
     }
     return result
 }

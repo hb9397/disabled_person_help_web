@@ -38,7 +38,7 @@ while ($row = mysqli_fetch_array($result)) {
     '시설주소' => $row['addr'], '시설유형' => $row['category'], 
     '장애인전용주차구역여부' => $row['disabled_parking_area'],
     '장애인용승강기여부' => $row['disabled_elevator'], '장애인화장실여부' => $row['disabled_toilet'], 
-    '장애인화장실여부' => $row['disabled_rooms'],
+    '장애인용객실이용가능여부' => $row['disabled_rooms'],
     'No' => $row['no']);
 
     $result_array = to_han(json_encode($list_array));
