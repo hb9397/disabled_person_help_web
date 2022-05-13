@@ -126,8 +126,8 @@ const Facilities = (props) => {
         <div>
           <h3>위에 버튼중에서</h3>
           <h3>찾고자 하는 시설을 눌러주세요</h3></div> : null}
-        {props.isLibrary ? <Library setLocate={props.setLocate} setLat={props.setLat} setLng={props.setLng} locate={props.locate} setIsShowLibraryData={props.setIsShowLibraryData} ></Library> : null}
-        {props.isChair ? <ElectricChair setChairData={props.setChairData} setIsShowChairData={props.setIsShowChairData} setLat={props.setLat} setLng={props.setLng} locate={props.locate} setIsShowData={props.setIsShowData}></ElectricChair> : null}
+        {props.isLibrary ? <Library setLibraryData={props.setLibraryData} isLibrary={props.isLibrary} setLat={props.setLat} setLng={props.setLng} locate={props.locate} setIsShowLibraryData={props.setIsShowLibraryData} ></Library> : null}
+        {props.isChair ? <ElectricChair setChairData={props.setChairData} setIsShowChairData={props.setIsShowChairData} setLat={props.setLat} setLng={props.setLng} locate={props.locate} isChair={props.isChair}></ElectricChair> : null}
         {props.isLive ? <Live setIsShowLiveData={props.setIsShowLiveData} isShowLiveData={props.isShowLiveData} locate={props.locate} setLiveData={props.setLiveData} setLat={props.setLat} setLng={props.setLng}></Live> : null}
         {props.isTour ? <Tourism setIsShowTourData={props.setIsShowTourData} isShowTourData={props.isShowTourData} locate={props.locate} setTourData={props.setTourData} setLat={props.setLat} setLng={props.setLng} ></Tourism> : null}
       </div>

@@ -26,11 +26,12 @@ const Data = (props) => {
         </div> : null}
       {props.isShowLibraryData ?
         <div><h3>
-          도서관명: {props.locate.도서관명}<br /><br />
-          주소: {props.locate.주소}<br /><br />
-          운영시간: {props.locate.운영시간}<br /><br />
-          휴일: {props.locate.정기휴관일}<br /><br />
-          기관종류: {props.locate.도서관구분명}<br /><br />
+          도서관명: {props.libraryData.도서관명}<br /><br />
+          주소: {props.libraryData.주소}<br /><br />
+          운영시간: {props.libraryData.운영시간}<br /><br />
+          휴일: {props.libraryData.휴일}<br /><br />
+          전화번호: {props.libraryData.전화번호}<br /><br />
+          홈페이지: {props.libraryData.홈페이지}<br /><br />
         </h3>
 
           <br />
