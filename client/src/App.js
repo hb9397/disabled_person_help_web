@@ -9,6 +9,7 @@ import MapSet from './components/MapSet';
 import TodoModal from './components/TodoModal';
 import title_logo from './image/question.png'
 
+
 function App() {
   const [lat, setLat] = useState(37.365264512305174); //위도  
   const [lng, setLng] = useState(127.10676860117488); //경도
@@ -49,7 +50,12 @@ function App() {
     setShowModal(false)
   }
 
-  
+  // test
+  function test() {
+    var result = 'test'
+    document.getElementById('id').value = result
+  }
+
   return (
     <div className='app'>
       <table>
@@ -88,12 +94,17 @@ function App() {
             </td>
           </tr>
           <tr>
-            <td></td>
+            <td>
+
+            </td>
             <td></td>
           </tr>
         </tbody>
-
       </table>
+      <form name='form' method='GET' action='http://localhost/disabled_person_help_web/phpServer/test.php'>
+        <input type="text" name="id" ></input>
+        <button onClick={test}>제발</button>
+      </form>
     </div>
   );
 }
