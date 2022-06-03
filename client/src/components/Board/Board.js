@@ -10,7 +10,7 @@ function Board() {
   const [viewContent, setViewContent] = useState([]);
 
   useEffect(() => {
-    Axios.get('http://127.0.0.1:80/disabled_person_help_web/phpserver/board.php').then((response) => {
+    Axios.get('http://127.0.0.1:80/disabled_person_help_web/phpserver/s_board.php').then((response) => {
       setViewContent(response.data);
     })
   }, [viewContent])

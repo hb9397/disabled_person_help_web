@@ -3,13 +3,7 @@ header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
 
 echo '['; // json파일 형식을 맞추기 위함
-$conn = mysqli_connect(
-    'localhost',
-    'beom',
-    '8236',
-    'beom_db'
-);
-
+include './dbconn.php';
 
 $sql = "SELECT * FROM tourism"; //사용할 sql문 변수
 $result = mysqli_query($conn, $sql); //db접근 정보와 sql을 날려가져온 값을 해당 변수에 저장

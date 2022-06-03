@@ -16,16 +16,16 @@ function WriteBoard() {
     setContent(e.target.value);
   }
 
-  function test() {
+/*   function test() {
     document.getElementById('title').value = title
     document.getElementById('content').value = content
-  }
+  } */
 
   return (
     <div className="">
       <div className="">
         <h1>게시글 쓰기</h1>
-        <form name='form' method='GET' action='http://localhost/disabled_person_help_web/phpServer/test.php'>
+        <form name='form' method='GET' action='http://localhost/disabled_person_help_web/phpServer/ud_board.php'>
           <div className='' >
             <div className=''>
               <label for="" className=''>제목</label>
@@ -41,7 +41,7 @@ function WriteBoard() {
           </div>
 
           <div className=''>
-            <button onClick="" className=''>등록</button>
+            <button className=''>등록</button>
             <Link to='/board'>
               <button className=''>취소</button>
             </Link>

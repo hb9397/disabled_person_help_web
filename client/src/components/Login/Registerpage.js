@@ -1,53 +1,53 @@
-import Axios from 'axios';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 function Registerpage() {
 
-    const [usernameReg, setUsernameReg] = useState('');
-    const [passwordReg, setPasswordReg] = useState('');
+    const [id, setID] = useState('');
+    const [pw, setPW] = useState('');
+    const [userName, setUserName] = useState('');
 
-    const register = () => {    // 회원가입 정보 삽입??
-        window.location.href = "/login"
-        alert("회원가입에 성공하였습니다.")
-
-        Axios.post('http://localhost:3001/register', {
-            username: usernameReg,
-            password: passwordReg,
-        }).then((response) => {
-            console.log(response);
-        })
+    function handleUserName(e) {
+        e.preventDefault();
+        setUserName(e.target.value)
     }
 
-    const register_info = () => {
-        fetch('http://localhost/loginpage/phpserver/server_rg.php', {
-            headers: {
-                'Accept': 'application / json'
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
+    function handleID(e) {
+        e.preventDefault();
+        setID(e.target.value)
+    }
+
+    function handlePW(e) {
+        e.preventDefault();
+        setPW(e.target.value)
     }
 
     return (
         <div className="registerpage">
             <div className="registeration">
                 <h1>회원가입</h1>
-                <div>
-                    <label>ID</label><br />
-                    <input type='text' onChange={(e) => {
-                        setUsernameReg(e.target.value);
-                    }} />
-                </div>
-                <div>
-                    <label>PassWord</label><br />
-                    <input type='password' onChange={(e) => {
-                        setPasswordReg(e.target.value);
-                    }} />
-                </div>
-                <button onClick={register}>회원가입</button>
-                <button onClick={register_info}>회원 정보 출력</button>
+                <form name='form' method='GET' action='http://localhost/disabled_person_help_web/phpServer/sign_up.php'>
+
+                    <div className=''>
+                        <label for="" className=''>닉네임</label><br />
+                        <input type='text' name='userName' value={userName} onChange={handleUserName} className='' />
+                    </div>
+
+                    <div className=''>
+                        <label for="" className=''>아이디</label><br />
+                        <input type='text' name='id' value={id} onChange={handleID} className='' />
+                    </div>
+
+                    <div className=''>
+                        <label for="" className=''>비밀번호</label><br />
+                        <input type='text' name='pw' value={pw} onChange={handlePW} className='' />
+                    </div>
+
+                    <button onClick=''>회원가입</button>
+                    <Link to='/'>
+                        <button className=''>취소</button>
+                    </Link>
+                </form>
             </div>
         </div>
     )

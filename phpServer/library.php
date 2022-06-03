@@ -3,12 +3,7 @@ header('Content-Type: application/json'); //해당 파일을 json파일이라고
 header('Access-Control-Allow-Origin: *');
 
 echo '['; //json파일 형식 맞추기위함
-$conn = mysqli_connect(
-    "localhost",
-    "beom",
-    "8236",
-    "beom_db"
-);
+include './dbconn.php';
 
 $sql = "SELECT * FROM library";
 $result = mysqli_query($conn, $sql); // 쿼리 결과값을
