@@ -27,7 +27,8 @@ function to_han($str)
 $list_array = array(
   'idx' => $row['idx'],
   'title' => $row['title'],
-  'content' => $row['content']
+  'content' => $row['content'],
+  'username' => $row['username']
 );
 
 $result_array = to_han(json_encode($list_array));
@@ -41,7 +42,8 @@ while ($row = mysqli_fetch_array($result)) {
   $list_array = array(
     'idx' => $row['idx'],
     'title' => $row['title'],
-    'content' => $row['content']
+    'content' => $row['content'],
+    'username' => $row['username']
   );
 
   $result_array = to_han(json_encode($list_array));

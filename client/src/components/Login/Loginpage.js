@@ -5,6 +5,7 @@ function Loginpage() {
 
     const [id, setID] = useState('');
     const [pw, setPW] = useState('');
+    
 
     const history = useHistory();
 
@@ -27,10 +28,13 @@ function Loginpage() {
                         if (pw === data[i].UserPW) {
                             alert("로그인 성공")
                             sessionStorage.setItem('user_id',id)
+                            var userName = data[i].UserName
+                            sessionStorage.setItem('user_name', userName)
                             history.push({
                                 pathname: '/',
                                 state: {
                                     id: id,
+                                    username: userName,
                                     pw: pw
                                 }
                             })

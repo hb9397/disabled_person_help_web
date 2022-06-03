@@ -33,6 +33,8 @@ const Facilities = (props) => {
       .then(res => res.json())
       .then(data => {
         props.setLocate(data)
+        console.log(sessionStorage.getItem('user_id'))
+        console.log(sessionStorage.getItem('user_name')) 
       })
   }
   function showElectChair() {

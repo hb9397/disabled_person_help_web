@@ -7,8 +7,8 @@ import Board from './components/Board/Board';
 import LoginPage from './components/Login/Loginpage';
 import RegisterPage from './components/Login/Registerpage';
 import Userpage from './components/Login/Userpage';
-// import Startlogin from './components/Login/Startlogin';
 import WriteBoard from './components/Board/WriteBoard';
+import DetailContent from './components/Board/DetailContent';
 function App() {
 
   return (
@@ -25,6 +25,10 @@ function App() {
           
           <Route path="/board">
             <Board></Board>
+          </Route>
+
+          <Route path="/detailContent">
+            <DetailContent></DetailContent>
           </Route>
 
           <Route path="/wirteboard">

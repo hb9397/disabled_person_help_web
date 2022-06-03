@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import s from '../test.module.css'
 
 function WriteBoard() {
 
@@ -14,6 +15,7 @@ function WriteBoard() {
   function handleContent(e) {
     e.preventDefault();
     setContent(e.target.value);
+    console.log(sessionStorage.getItem('user_name'))
   }
 
 /*   function test() {
@@ -38,6 +40,10 @@ function WriteBoard() {
               <label for="" className=''>문의내용</label>
               <input type='text' name='content' value={content} onChange={handleContent} className=''></input>
             </div>
+          </div>
+
+          <div className={s.divnone}>
+            <input type='text' name='writer' value={sessionStorage.getItem('user_name')}></input>
           </div>
 
           <div className=''>
