@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-//import State from './State/State';
+import State from '../State/State';
 
 //import logo from "../img/headerlogo.png"
 // import s from "../css/Header.module.css";
@@ -42,9 +42,9 @@ const Header = () => {
                 </li>
             </ul>
 
-            {/* <div className={s.navbar__login}>
+            <div className=''>
                 <State></State>
-            </div> */}
+            </div>
         </div>
     );
 };

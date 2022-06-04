@@ -5,8 +5,7 @@ import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Board from './components/Board/Board';
 import LoginPage from './components/Login/Loginpage';
-import RegisterPage from './components/Login/Registerpage';
-import Userpage from './components/Login/Userpage';
+import SignUp from './components/Login/SignUp';
 import WriteBoard from './components/Board/WriteBoard';
 import DetailContent from './components/Board/DetailContent';
 function App() {
@@ -40,11 +39,7 @@ function App() {
           </Route>
 
           <Route path="/register">
-            <RegisterPage></RegisterPage>
-          </Route>
-
-          <Route path="/user">
-            <Userpage></Userpage>
+            <SignUp></SignUp>
           </Route>
         </Switch>
 

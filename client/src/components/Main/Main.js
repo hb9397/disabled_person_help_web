@@ -110,11 +110,6 @@ function Main() {
                     </tr>
                 </tbody>
             </table>
-            <form name='form' method='GET' action='http://localhost/disabled_person_help_web/phpServer/test.php' target='iframe1'>
-                <input type="text" name="id" ></input>
-                <button onClick={test}>제발</button>
-            </form>
-            <iframe name='iframe1' width={0} height={0} style={style}></iframe>
         </div>
     );
 }

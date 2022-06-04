@@ -7,6 +7,7 @@ function WriteBoard() {
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
 
+
   function handleTitle(e) {
     e.preventDefault();
     setTitle(e.target.value)
@@ -27,7 +28,8 @@ function WriteBoard() {
     <div className="">
       <div className="">
         <h1>게시글 쓰기</h1>
-        <form name='form' method='GET' action='http://localhost/disabled_person_help_web/phpServer/ud_board.php'>
+        <form name='form' method='GET' action='http://localhost/disabled_person_help_web/phpServer/u_board.php' target='target'> 
+        {/* target은 페이지 전환 방지용으로 사용 */}
           <div className='' >
             <div className=''>
               <label for="" className=''>제목</label>
@@ -42,10 +44,10 @@ function WriteBoard() {
             </div>
           </div>
 
-          <div className={s.divnone}>
+          <div className={s.hidden}>
             <input type='text' name='writer' value={sessionStorage.getItem('user_name')}></input>
-          </div>
-
+          </div>      
+          
           <div className=''>
             <button className=''>등록</button>
             <Link to='/board'>
@@ -53,6 +55,9 @@ function WriteBoard() {
             </Link>
           </div>
         </form>
+
+        <iframe id='target' name='target' className={s.hidden}></iframe> {/* form 태그 페이지 전환 방지 */}
+
       </div>
     </div>
   )
