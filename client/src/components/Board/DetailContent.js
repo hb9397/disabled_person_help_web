@@ -22,10 +22,6 @@ function DetailContent() {
                         <span className='{s.boardText}'>TITLE</span>
                         <span>{location.state.props.title}</span>
                     </div>
-                    <div className={'s.DateDiv'}>
-                        <span className={'s.boardText'}>DATE</span>
-                        <span>{location.state.props.day}</span>
-                    </div>
                 </div>
 
                 <div className={'s.detailTitle'}>
@@ -37,8 +33,7 @@ function DetailContent() {
             </div>
 
             <div className={'s.detailContent'}>
-                <div className={'s.titleDiv'}>
-                    {/* <span className={s.boardText}>CONTENT</span> */}
+                <div className={'s.titleDiv'}>a
                 </div>
                 <textarea className={'s.textarea'} value={location.state.props.content} readOnly></textarea>
             </div>

@@ -33,6 +33,7 @@ function WriteBoard() {
           <div className='' >
             <div className=''>
               <label for="" className=''>제목</label>
+              <textarea name='id' value={sessionStorage.getItem('user_id')} className={s.hidden}></textarea>
               <input type='text' name='title' value={title} onChange={handleTitle} className=''></input>
             </div>
           </div>
@@ -50,13 +51,15 @@ function WriteBoard() {
           
           <div className=''>
             <button className=''>등록</button>
-            <Link to='/board'>
+
+            <Link to='/board'> {/* Link로 바로 다른 주소로 연결하면 취소버튼을 눌렀을 때, form태그의 action주소로 수행 X */}
               <button className=''>취소</button>
             </Link>
+
           </div>
         </form>
 
-        <iframe id='target' name='target' className={s.hidden}></iframe> {/* form 태그 페이지 전환 방지 */}
+        <iframe title='a' id='target' name='target' className={s.hidden}></iframe> {/* form 태그 페이지 전환 방지 */}
 
       </div>
     </div>
