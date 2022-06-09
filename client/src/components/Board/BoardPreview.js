@@ -18,7 +18,7 @@ const BoardPreview = (props) => {
     return (
      <tr onClick={selectBoard}>
          <td>{props.title}</td>
-         {/* <td>{props.content}</td> */}
+         <td>{props.content}</td>
          <td>{props.writer}</td>
      </tr>  
     )

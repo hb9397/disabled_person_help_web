@@ -118,10 +118,10 @@ const Facilities = (props) => {
   return (
     <>
       <div className='facilitiesBtns'>
-        <button className='facilitiesBtn' onClick={showLibrary}>도서관</button>{'  '}
+        <button className='facilitiesBtn' onClick={showLibrary}>점자도서관</button>{'  '}
         <button className='facilitiesBtn' onClick={showElectChair}>전동휠체어</button>{'  '}
-        <button className='facilitiesBtn' onClick={showLive}>장애인 거주 시설</button>{'  '}
-        <button className='facilitiesBtn' onClick={showTour}>장애인 투어리즘</button>{'  '}
+        <button className='facilitiesBtn' onClick={showLive}>사회복지시설</button>{'  '}
+        <button className='facilitiesBtn' onClick={showTour}>관광/숙박업 장애인 시설</button>{'  '}
       </div><br/>
       <div className='facilitiesShow'>
         {status ? 

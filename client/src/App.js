@@ -8,6 +8,7 @@ import LoginPage from './components/Login/Loginpage';
 import SignUp from './components/Login/SignUp';
 import WriteBoard from './components/Board/WriteBoard';
 import DetailContent from './components/Board/DetailContent';
+import MyBoard from './components/Board/Myboard';
 function App() {
 
   return (
@@ -30,7 +31,7 @@ function App() {
             <DetailContent></DetailContent>
           </Route>
 
-          <Route path="/wirteboard">
+          <Route path="/writeboard">
             <WriteBoard></WriteBoard>
           </Route>
 
@@ -41,6 +42,11 @@ function App() {
           <Route path="/register">
             <SignUp></SignUp>
           </Route>
+
+          <Route path="/myboard">
+            <MyBoard></MyBoard>
+          </Route>
+          
         </Switch>
 
       </div>

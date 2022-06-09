@@ -1,65 +1,80 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import s from '../test.module.css'
+import h from '../css/test.module.css'
+import BoardModal from './BoardModal'
+import s from '../css/Board.module.css';
 
 function WriteBoard() {
+  const [inputTitle, setInputTitle] = useState("")
+  // 사용자 입력 제목, 문의사항 내용
 
-  const [title, setTitle] = useState("")
-  const [content, setContent] = useState("")
+  const [inputContent, setInputContent] = useState("")
 
+  const [resultText, setResultText] = useState("")
 
   function handleTitle(e) {
     e.preventDefault();
-    setTitle(e.target.value)
+    setInputTitle(e.target.value)
   }
 
   function handleContent(e) {
     e.preventDefault();
-    setContent(e.target.value);
-    console.log(sessionStorage.getItem('user_name'))
+    setInputContent(e.target.value);
   }
 
-/*   function test() {
-    document.getElementById('title').value = title
-    document.getElementById('content').value = content
-  } */
+  function writeBoard() {
+    if (!inputTitle) {
+      alert("문의사항의 제목을 입력해주세요.")
+    }
+    else if (!inputContent) {
+      alert("문의하실 내용을 입력해주세요.")
+    }
+    else if (inputTitle && inputContent) {
+      setResultText("게시글 등록이 완료되었습니다.")
+
+    }
+    else {
+      alert("입력란들을 모두 확인해주세요.")
+    }
+  }
 
   return (
-    <div className="">
-      <div className="">
-        <h1>게시글 쓰기</h1>
-        <form name='form' method='GET' action='http://localhost/disabled_person_help_web/phpServer/u_board.php' target='target'> 
-        {/* target은 페이지 전환 방지용으로 사용 */}
-          <div className='' >
-            <div className=''>
-              <label for="" className=''>제목</label>
-              <textarea name='id' value={sessionStorage.getItem('user_id')} className={s.hidden}></textarea>
-              <input type='text' name='title' value={title} onChange={handleTitle} className=''></input>
-            </div>
-          </div>
+    <div className={s.board}>
+      <div className={s.createBoard}>
+        <h1>문의사항</h1>
 
-          <div className='' >
-            <div className=''>
-              <label for="" className=''>문의내용</label>
-              <input type='text' name='content' value={content} onChange={handleContent} className=''></input>
-            </div>
+        <div className={s.createBody} >
+          <div className={s.createInputs}>
+            <label for="" className={s.createLabel}>제목</label>
+            <input className={s.createInput} type='text' name='Title' defaultValue={inputTitle} onChange={handleTitle}></input>
           </div>
+        </div>
 
-          <div className={s.hidden}>
-            <input type='text' name='writer' value={sessionStorage.getItem('user_name')}></input>
-          </div>      
-          
+        <div className={s.createInputs} >
           <div className=''>
-            <button className=''>등록</button>
+            <label for="" className={s.createLabel}>문의내용</label>
+            <textarea className={s.createInputText} type='text' name='Content' defaultValue={inputContent} onChange={handleContent} rows="10" ></textarea>
+          </div>
+        </div>
+
+        <form name='form' method='GET' action='http://localhost/disabled_person_help_web/phpServer/c_board.php' target='target'>
+          {/* target은 페이지 전환 방지용으로 사용 */}
+          <textarea name='UserName' value={sessionStorage.getItem('user_name')} className={h.hidden}></textarea>
+          <textarea name='title' value={inputTitle} className={h.hidden}></textarea>
+          <textarea name='content' value={inputContent} className={h.hidden}></textarea>
+
+          <iframe id='target' name='target' className={h.hidden}></iframe> {/* form 태그 페이지 전환 방지 */}
+          
+          <div className={s.btnArea}>
+            <BoardModal writeBoard={writeBoard}
+              inputTitle={inputTitle} inputContent={inputContent} resultText={resultText}>
+            </BoardModal>
 
             <Link to='/board'> {/* Link로 바로 다른 주소로 연결하면 취소버튼을 눌렀을 때, form태그의 action주소로 수행 X */}
-              <button className=''>취소</button>
+              <button className={s.btn}>취소</button>
             </Link>
-
           </div>
         </form>
-
-        <iframe title='a' id='target' name='target' className={s.hidden}></iframe> {/* form 태그 페이지 전환 방지 */}
 
       </div>
     </div>

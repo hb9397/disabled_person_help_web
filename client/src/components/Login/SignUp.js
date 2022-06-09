@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SignUpModal from './SignUpModal';
-import s from "../test.module.css"
+import h from "../css/test.module.css"
 
 function SignUp() {
     // 전역변수 const로 선언한 useState나 변수는 스크립트에서 발생하는 이벤트로 setUseState()로 상태를 변경하여도 초기값이 설정 되어 있기때문에 이벤트
@@ -19,7 +19,7 @@ function SignUp() {
 
     const [idOk, setIdOk] = useState(false); // id중복확인 버튼을 눌러서 중복이 되었는지 안되었는지 여부
     const [nameOk, setNameOk] = useState(false); // 닉네임 중복확인 버튼을 눌러서 중복이 되었는지 안되었는지 여부
- 
+
     function handleUserName(e) {
         e.preventDefault();
         setInputUserName(e.target.value)
@@ -44,8 +44,10 @@ function SignUp() {
                 .then((data) => {
                     for (var i = 0; i < data.length; i++) {
                         if (String(inputId) === String(data[i].UserID)) {
+
                             alert("이미 존재하는 ID 입니다.")
-                            ok = false
+                            setIdOk(false)
+                            console.log(idOk)
                             window.location.reload()
                             break
                         }
@@ -103,6 +105,7 @@ function SignUp() {
             <div className="registeration">
                 <h1>회원가입</h1>
                 <div className=''>
+                    {/* <button onClick={dd}>dd</button> */}
                     <label for="" className=''>닉네임</label><br />
                     <input type='text' value={inputUserName} onChange={handleUserName} className='' />
                     <button disabled={!(inputUserName)} onClick={checkName}>중복확인</button> {/* 닉네임 입력시 중복확인 버튼 활성화 */}
@@ -119,24 +122,24 @@ function SignUp() {
                 </div>
 
                 <div className=''>
-                    <label for="" className=''>비밀번호</label><br />
+                <label for="" className=''>비밀번호</label><br/>
                     {/* 닉네임입력, 닉네임 중복확인, 아이디값 입력, 아이디 중복확인시 input 활성화 */}
-                    <input type='text' disabled={!(inputUserName && nameOk && inputId && idOk)} value={inputPw} onChange={handlePW} className='' />
+                    <input type='password' disabled={!(inputUserName && nameOk && inputId && idOk)} value={inputPw} onChange={handlePW} className='' /><br/>
                 </div>
-                
+
                 {/* form 태그의 action의 주소로 GET형태의 메서드로 하여 각 name에 해당되는 value값을 보낸다.
                     하지만  target을 iframe으로 하여 페이지 이동을 막아서 값만 전달하고 회원가입 이후에 바로 로그인 주소로 가는 
                     함수나 Link를 걸면 값이 php로 넘어가지 않아서 커스텀 모달창을 한번 거친후에 다시 login주소로 이동하게 한다. */}
                 <form name='form' method='GET' action='http://localhost/disabled_person_help_web/phpServer/sign_up.php' target='target'>
 
                     {/* 전달할 값들을 노출시키지 않기 위해서 hidden속성을 적용 */}
-                    <textarea name='UserName' value={userName} className={s.hidden}></textarea>
-                    <textarea name='ID' value={id} className={s.hidden}></textarea>
-                    <textarea name='PW' value={pw} className={s.hidden}></textarea>
+                    <textarea name='UserName' value={userName} className={h.hidden}></textarea>
+                    <textarea name='ID' value={id} className={h.hidden}></textarea>
+                    <textarea name='PW' value={pw} className={h.hidden}></textarea>
 
-                    <iframe title='test' id='target' name='target' className={s.hidden}></iframe> {/* form 태그 페이지 전환 방지 */}
+                    <iframe title='test' id='target' name='target' className={h.hidden}></iframe> {/* form 태그 페이지 전환 방지 */}
 
-                    <SignUpModal 
+                    <SignUpModal
                         header={modalHeader} result={modalResult}
                         userName={userName} nameOk={nameOk} id={id} idOk={idOk} inputPw={inputPw}
                         signUp={signUp}>

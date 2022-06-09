@@ -37,7 +37,7 @@ const MapSet = (props) => {
             ></Map>
             <button className='btn' onClick={myLocate}>내 위치</button> <br/><br/>
             <button className='btn' onClick={showLarge}>확대</button>
-            <button className='btn' onClick={showSmall}>취소</button><br/><br/>
+            <button className='btn' onClick={showSmall}>축소</button><br/><br/>
         </div>
     )
 }

@@ -53,16 +53,6 @@ function Main() {
         setShowModal(false)
     }
 
-    // test
-    function test() {
-        var result = 'dk'
-        document.getElementById('id').value = result
-    }
-
-    //test
-    let style = {
-        display: "none"
-    }
 
 
     return (
